@@ -1,0 +1,29 @@
+index:
+  path: /{_locale}
+  controller: App\Controller\DefaultController::index
+  requirements:
+    _locale: '%app.supported_locales%'
+  defaults:
+    _locale: fr
+contact:
+  path: /{_locale}/contact
+  controller: App\Controller\DefaultController::contactAction
+  requirements:
+    _locale: '%app.supported_locales%'
+products:
+  path: /{_locale}/products/{categoryId}
+  controller: App\Controller\ShopController::index
+  defaults:
+    categoryId: 1
+  requirements:
+    _locale: '%app.supported_locales%'
+search:
+  path: /{_locale}/search
+  controller: App\Controller\ShopController::search
+  requirements:
+    _locale: '%app.supported_locales%'
+shopping-card:
+  path: /{_locale}/shopping-card
+  controller: App\Controller\ShoppingCardController::index
+  requirements:
+    _locale: '%app.supported_locales%'

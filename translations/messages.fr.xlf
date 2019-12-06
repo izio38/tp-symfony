@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="nz5zL.4" resname="shop.buyNow">
+        <source>shop.buyNow</source>
+        <target>Acheter maintenant</target>
+      </trans-unit>
+      <trans-unit id="WJFeDpH" resname="shop.products.title">
+        <source>shop.products.title</source>
+        <target>Les produits</target>
+      </trans-unit>
+      <trans-unit id="Xpm_UCA" resname="default.categorie.title">
+        <source>default.categorie.title</source>
+        <target>Les catégories</target>
+      </trans-unit>
+      <trans-unit id="5tvfCXH" resname="default.categorie.browseThe">
+        <source>default.categorie.browseThe</source>
+        <target>Parcourir les</target>
+      </trans-unit>
+      <trans-unit id="WVqrpJR" resname="default.contact.contact">
+        <source>default.contact.contact</source>
+        <target>Contact</target>
+      </trans-unit>
+      <trans-unit id="yP7sLTD" resname="default.contact.formTitle">
+        <source>default.contact.formTitle</source>
+        <target>Formulaire de contact</target>
+      </trans-unit>
+      <trans-unit id="LVPKBUQ" resname="default.contact.firstName">
+        <source>default.contact.firstName</source>
+        <target>Prénom</target>
+      </trans-unit>
+      <trans-unit id="8KMxEI8" resname="default.contact.lastName">
+        <source>default.contact.lastName</source>
+        <target>Nom</target>
+      </trans-unit>
+      <trans-unit id="GOna5rN" resname="default.contact.phone">
+        <source>default.contact.phone</source>
+        <target>Téléphone</target>
+      </trans-unit>
+      <trans-unit id="zka3g7h" resname="default.contact.message">
+        <source>default.contact.message</source>
+        <target>Message</target>
+      </trans-unit>
+      <trans-unit id="YBsuD0i" resname="default.contact.messagePlaceholder">
+        <source>default.contact.messagePlaceholder</source>
+        <target>Bonjour, ...</target>
+      </trans-unit>
+      <trans-unit id="D422kfj" resname="default.contact.send">
+        <source>default.contact.send</source>
+        <target>Envoyer</target>
+      </trans-unit>
+      <trans-unit id="19lNzDp" resname="default.nav.categorie">
+        <source>default.nav.categorie</source>
+        <target>Catégories</target>
+      </trans-unit>
+      <trans-unit id=".pf4BTm" resname="default.nav.contact">
+        <source>default.nav.contact</source>
+        <target>Contact</target>
+      </trans-unit>
+      <trans-unit id="LqMvy4L" resname="default.nav.search">
+        <source>default.nav.search</source>
+        <target>Rechercher</target>
+      </trans-unit>
+      <trans-unit id="XA67tS0" resname="default.nav.changeLanguage">
+        <source>default.nav.changeLanguage</source>
+        <target>Changer de langage</target>
+      </trans-unit>
+      <trans-unit id="HBnVOm2" resname="shop.search.searchTitle">
+        <source>shop.search.searchTitle</source>
+        <target>Résultat de la recherche</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

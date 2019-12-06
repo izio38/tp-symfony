@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}iBook - {{ "default.categorie.title" | trans }}{% endblock %}
+
+{% block body %}
+    <div class="bg-tertiary">
+        <div class="container section-header no-breadcrumb">
+            <h1 class="text-center mb-0">{{ "default.categorie.title" | trans }}</h1>
+        </div>
+    </div>
+    <div class="container mt-4">
+        <div class="row">
+            {% for cat in categories %}
+                <div class="col-lg-4">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{ asset('images/product-placeholder.jpeg') }}"
+                             alt="{{ cat.libelle }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ cat.libelle }}</h5>
+                            <p class="card-text">{{ cat.texte }}</p>
+                            <a href="{{ path("products") ~ "/" ~ cat.id }}" class="btn btn-primary">{{ "default.categorie.browseThe" | trans }} {{ cat.libelle }}</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

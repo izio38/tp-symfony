@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}iBook - {{ "shop.search.searchTitle" | trans }}{% endblock %}
+
+{% block body %}
+    <div class="bg-tertiary">
+        <div class="container section-header no-breadcrumb">
+            <h1 class="text-center mb-0">{{ "shop.search.searchTitle" | trans }}</h1>
+        </div>
+    </div>
+    <div class="container mt-4">
+        <div class="row">
+            {% for product in products %}
+                <div class="col-lg-4 mb-4">
+                    <div class="card " style="width: 18rem;">
+                        <img class="card-img-top" src="{{ asset('images/product-placeholder.jpeg') }}"
+                             alt="{{ product.libelle }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ product.libelle }} - {{ product.prix }}</h5>
+                            <p class="card-text">{{ product.texte }}</p>
+                            <a href="#" class="btn btn-primary">{{ "shop.buyNow" | trans }}</a>
+                        </div>
+                    </div>
+                </div>
+
+                {% else %}
+                    <p>Pas de résultat.</p>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
+

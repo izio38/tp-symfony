@@ -1,0 +1,14 @@
+.navbar-brand {
+    color: #e4b426 !important;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 24px;
+}
+
+.nav-link {
+    font-family: 'Exo 2', sans-serif;
+}
+
+form.form-inline {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
