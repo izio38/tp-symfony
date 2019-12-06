@@ -39,4 +39,10 @@ class ShoppingCartController extends AbstractController
         $shoppingCartService->reset();
         return $this->redirectToRoute("shopping-cart");
     }
+
+    public function shoppingWidgetAction(ShoppingCartService $shoppingCartService) {
+        $cartItemNumber = $shoppingCartService->getProductNumber();
+
+        return $this->render("_partials/_cart_item_notification.html.twig", [ 'cartItemNumber' => $cartItemNumber ]);
+    }
 }

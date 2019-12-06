@@ -1,0 +1,6 @@
+<a class="btn btn-outline-primary btn-rounded" href="{{ path('shopping-cart') }}">
+    <i class="material-icons align-middle">shopping_cart</i>
+    {% if cartItemNumber > 0 %}
+        <span id="cart-item-notification" class="badge">{{ cartItemNumber }}</span>
+    {% endif %}
+</a>

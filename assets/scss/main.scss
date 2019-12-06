@@ -1,7 +1,31 @@
-
-@import "~bootstrap/dist/css/bootstrap.css";
-
 $theme-colors: (
-    "primary": #0074d9,
-    "danger": #ff4136
+    "primary": #f5bc15,
+    "secondary": #3668b5
 );
+
+@import "~bootstrap/scss/bootstrap";
+
+.btn-primary {
+  color: white;
+}
+
+.dropdown-toggle::after {
+  margin-left: 0;
+}
+
+.input-group > .form-control.sm-input {
+  width: 8rem;
+}
+
+.btn.btn-rounded {
+  border-radius: 4px;
+}
+
+.badge {
+  position: absolute;
+  padding: 4px 6px;
+  border-radius: 50%;
+  background: red;
+  color: white;
+  vertical-align: middle;
+}

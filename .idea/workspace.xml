@@ -2,18 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be607f7a-8199-44e3-8e33-d53d4edadf82" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/scss/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/TP1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TP1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/_partials/_cart_item_notification.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/navbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ShoppingCartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ShoppingCartController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/_partials/_navbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/_partials/_navbar.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/default/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,7 +238,7 @@
       <workItem from="1575446831512" duration="7745000" />
       <workItem from="1575641118927" duration="3669000" />
       <workItem from="1575654378355" duration="38000" />
-      <workItem from="1575654435233" duration="8043000" />
+      <workItem from="1575654435233" duration="13160000" />
     </task>
     <servers />
   </component>
@@ -286,22 +281,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="957" y="344" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1575655191086" />
-    <state width="1877" height="132" key="GridCell.Tab.0.bottom" timestamp="1575662088087">
+    <state width="1877" height="132" key="GridCell.Tab.0.bottom" timestamp="1575671679997">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="132" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1575662088087" />
-    <state width="1877" height="132" key="GridCell.Tab.0.center" timestamp="1575662088087">
+    <state width="1877" height="132" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1575671679997" />
+    <state width="1877" height="132" key="GridCell.Tab.0.center" timestamp="1575671679997">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="132" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1575662088087" />
-    <state width="1877" height="132" key="GridCell.Tab.0.left" timestamp="1575662088087">
+    <state width="1877" height="132" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1575671679997" />
+    <state width="1877" height="132" key="GridCell.Tab.0.left" timestamp="1575671679997">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="132" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1575662088087" />
-    <state width="1877" height="132" key="GridCell.Tab.0.right" timestamp="1575662088087">
+    <state width="1877" height="132" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1575671679997" />
+    <state width="1877" height="132" key="GridCell.Tab.0.right" timestamp="1575671679997">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="132" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1575662088087" />
+    <state width="1877" height="132" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1575671679997" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1575657188539">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
