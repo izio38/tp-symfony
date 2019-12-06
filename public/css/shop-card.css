@@ -1,0 +1,21 @@
+.wan-spinner .plus {
+    width: 25px !important;
+    height: 25px !important;
+}
+
+.wan-spinner .minus {
+    width: 25px !important;
+    height: 25px !important;
+}
+
+.wan-spinner .plus, .wan-spinner input {
+    height: 25px !important;
+}
+
+.floating-container {
+    width:200px;
+    display:inline-block;
+    overflow: auto;
+    white-space: nowrap;
+    margin:0px auto;
+}

@@ -18,7 +18,16 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ product.libelle }} - {{ product.prix }}</h5>
                             <p class="card-text">{{ product.texte }}</p>
-                            <a href="#" class="btn btn-primary">{{ "shop.buyNow" | trans }}</a>
+
+                            <div class="wan-spinner select-quantity">
+                              <a href="javascript:void(0)" class="minus">-</a>
+                              <input id="product-{{ product.id }}-quantity" type="text" value="1">
+                              <a href="javascript:void(0)" class="plus">+</a>
+                            </div>
+
+                        </div>
+                        <div class="card-footer">
+                            <button productId="{{ product.id }}" class="add-product-button btn btn-primary">{{ "shop.addToCart" | trans }}</button>
                         </div>
                     </div>
                 </div>
@@ -26,5 +35,40 @@
         </div>
     </div>
 
+{% endblock %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('vendors/wan-spinner.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/shop-card.css') }}"/>
+{% endblock %}
+
+{% block javascripts %}
+    <script src=" {{ asset('vendors/wan-spinner.js') }}"></script>
+    <script>
+
+        $(() => {
+            $(".select-quantity").WanSpinner({
+                minValue: 1,
+                maxValue: 20,
+                step: 1,
+                inputWidth: 60,
+            });
+        });
+
+        const addProductToCard = (productId, quantity) => {
+            $.ajax({
+                method: "POST",
+                url: "{{ path('add-to-cart') }}",
+                data: {productId, quantity},
+                success: console.log
+            });
+        };
+
+        $(".add-product-button").click(function(event) {
+            const button = $( this );
+            const productId = button.attr("productId");
+            const quantity = $(`#product-${productId}-quantity`).val();
+            addProductToCard(productId, quantity);
+        })
+    </script>
 {% endblock %}

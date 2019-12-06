@@ -26,6 +26,18 @@ class ShoppingCartService
         return $this->cart;
     }
 
+    public function getExtendedContent()
+    {
+        return array_map(array($this, 'addExtendedInformation'), $this->cart);
+    }
+
+    public function addExtendedInformation($cartItem)
+    {
+        $product = $this->shop->findProduitById($cartItem["id"]);
+        $product["quantity"] = $cartItem["quantity"];
+        return $product;
+    }
+
     public function getTotalPrice()
     {
         $totalPrice = 0;
@@ -43,7 +55,7 @@ class ShoppingCartService
 
     public function addProduct(int $productId, int $quantity = 1)
     {
-        foreach ($this->cart as $product) {
+        foreach ($this->cart as &$product) {
             if ($product["id"] == $productId) {
                 $product["quantity"] += $quantity;
                 $this->session->set(self::CART_SESSION, $this->cart);
@@ -60,7 +72,7 @@ class ShoppingCartService
 
     public function decreaseProductQuantity(int $productId, int $quantity = 1)
     {
-        foreach ($this->cart as $cartProduct) {
+        foreach ($this->cart as &$cartProduct) {
             if ($cartProduct["id"] == $productId) {
                 if ($cartProduct["quantity"] <= $quantity) {
                     return self::removeProduct($productId);
@@ -75,7 +87,7 @@ class ShoppingCartService
 
     public function removeProduct(int $productId)
     {
-        foreach ($this->cart as $cartProduct) {
+        foreach ($this->cart as &$cartProduct) {
             if ($cartProduct["id"] == $productId) {
                 unset($cartProduct);
             }
@@ -86,5 +98,6 @@ class ShoppingCartService
     public function reset()
     {
         $this->cart = array();
+        $this->session->set(self::CART_SESSION, $this->cart);
     }
 }

@@ -73,6 +73,10 @@
         <source>shop.search.searchTitle</source>
         <target>Résultat de la recherche</target>
       </trans-unit>
+      <trans-unit id="snxhBZO" resname="shop.addToCart">
+        <source>shop.addToCart</source>
+        <target>Ajouter au panier</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

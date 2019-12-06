@@ -73,6 +73,10 @@
         <source>shop.search.searchTitle</source>
         <target>Search result</target>
       </trans-unit>
+      <trans-unit id="snxhBZO" resname="shop.addToCart">
+        <source>shop.addToCart</source>
+        <target>Add to cart</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

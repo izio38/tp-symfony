@@ -11,7 +11,9 @@ class ShopController extends AbstractController
 {
     public function index($categoryId, BoutiqueService $shopService)
     {
-        $productsFromCategorie = $shopService->findProduitsByCategorie($categoryId);
+        $productsFromCategorie = $shopService->findProduitsByCategorie(
+            $categoryId
+        );
         return $this->render('shop/index.html.twig', [
             'products' => $productsFromCategorie
         ]);
@@ -22,8 +24,8 @@ class ShopController extends AbstractController
      * @param BoutiqueService $shopService
      * @return Response
      */
-    public function search(Request $request, BoutiqueService $shopService) {
-
+    public function search(Request $request, BoutiqueService $shopService)
+    {
         if ($request->getMethod() == "POST") {
             $keyword = $request->request->get('keyword', null);
 
@@ -35,8 +37,12 @@ class ShopController extends AbstractController
                 ]);
             }
 
-            return $this->render("shop/search-result.html.twig", [ 'products' => [] ]);
+            return $this->render("shop/search-result.html.twig", [
+                'products' => []
+            ]);
         }
-        return $this->render("shop/search-result.html.twig", ['products' => []]);
+        return $this->render("shop/search-result.html.twig", [
+            'products' => []
+        ]);
     }
 }

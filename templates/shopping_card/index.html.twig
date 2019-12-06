@@ -3,5 +3,41 @@
 {% block title %}iBook - Mon panier{% endblock %}
 
 {% block body %}
-<p>Mon panier: Test</p>
+    <div class="bg-tertiary">
+        <div class="container section-header no-breadcrumb">
+            <h1 class="text-center mb-0">Mon panier</h1>
+        </div>
+    </div>
+    <div class="container mt-4">
+        {% if cart | length > 0 %}
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Produit</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Quantité</th>
+                    <th scope="col">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for product in cart %}
+                    <tr>
+                        <th scope="row"><img style="width: 225px; height: 225px;" src="{{ asset('images/product-placeholder.jpeg') }}"/></th>
+                        <td>{{ product.libelle }}</td>
+                        <td>{{ product.quantity }}</td>
+                        <td>Ajouter, supprimer</td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+            <div class="floating-container">
+                <a href="{{ path('reset-cart') }}" style="float: right; position: relative;" class="white-text-btn-danger btn btn-danger mb-3">Vider mon panier</a>
+            </div>
+        {% else %}
+            <p>Ooops! On dirait que votre panier est vide</p>
+        {% endif %}
+    </div>
+
+
 {% endblock %}
