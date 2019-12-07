@@ -13,25 +13,43 @@ class ShoppingCartController extends AbstractController
     public function index(ShoppingCartService $shoppingCartService)
     {
         $cartContent = $shoppingCartService->getExtendedContent();
-
+        $reversedCartContent = array_reverse($cartContent);
 
         return $this->render('shopping_card/index.html.twig', [
-            "cart" => $cartContent
+            "cart" => $reversedCartContent
         ]);
     }
 
     public function addToCart(
+        $productId,
         ShoppingCartService $shoppingCartService,
-        BoutiqueService $boutiqueService,
         Request $request
     ) {
-        $productId = intval($request->request->get("productId"));
-        $quantity = $request->request->get("quantity");
-        $shoppingCartService->addProduct($productId, $quantity);
+        if ($request->getMethod() == "POST") {
+            $productId = intval($request->request->get("productId"));
+            $quantity = $request->request->get("quantity");
+            $shoppingCartService->addProduct($productId, $quantity);
+        } else {
+            $shoppingCartService->addProduct($productId, 1);
+        }
 
-        $response = new Response();
-        $response->setStatusCode(201);
-        return $response;
+        if ($request->getMethod() == "POST") {
+            $response = new Response();
+            $response->setStatusCode(201);
+            return $response;
+        }
+
+        return $this->redirectToRoute("shopping-cart");
+    }
+
+    public function removeFromCart(
+        $productId,
+        ShoppingCartService $shoppingCartService
+    ) {
+        $parsedProductId = intval($productId);
+        $shoppingCartService->decreaseProductQuantity($parsedProductId, 1);
+
+        return $this->redirectToRoute("shopping-cart");
     }
 
     public function resetCart(ShoppingCartService $shoppingCartService)
@@ -40,9 +58,21 @@ class ShoppingCartController extends AbstractController
         return $this->redirectToRoute("shopping-cart");
     }
 
-    public function shoppingWidgetAction(ShoppingCartService $shoppingCartService) {
+    public function resetCartItem($productId, ShoppingCartService $shoppingCartService)
+    {
+        $parsedProductId = intval($productId);
+        $shoppingCartService->removeProduct($parsedProductId);
+
+        return $this->redirectToRoute("shopping-cart");
+    }
+
+    public function shoppingWidgetAction(
+        ShoppingCartService $shoppingCartService
+    ) {
         $cartItemNumber = $shoppingCartService->getProductNumber();
 
-        return $this->render("_partials/_cart_item_notification.html.twig", [ 'cartItemNumber' => $cartItemNumber ]);
+        return $this->render("_partials/_cart_item_notification.html.twig", [
+            'cartItemNumber' => $cartItemNumber
+        ]);
     }
 }

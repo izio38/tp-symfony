@@ -25,14 +25,20 @@
                         <th scope="row"><img style="width: 225px; height: 225px;" src="{{ asset('images/product-placeholder.jpeg') }}"/></th>
                         <td>{{ product.libelle }}</td>
                         <td>{{ product.quantity }}</td>
-                        <td>Ajouter, supprimer</td>
+                        <td>
+                            <a href="{{ path('remove-from-cart', {productId: product.id}) }}" class="btn btn-danger"><i class="material-icons align-middle">remove</i></a>
+                            <a href="{{ path('add-to-cart', {productId: product.id}) }}" class="btn btn-success"><i class="material-icons align-middle">add</i></a>
+                            <a href="{{ path('reset-cart-item', {productId: product.id}) }}" class="btn btn-danger"><i class="material-icons align-middle">delete</i></a>
+                        </td>
                     </tr>
                 {% endfor %}
 
                 </tbody>
             </table>
             <div class="floating-container">
+                <a href="{{ path('reset-cart') }}" style="float: right; position: relative;" class="ml-2 btn btn-primary">Payer</a>
                 <a href="{{ path('reset-cart') }}" style="float: right; position: relative;" class="white-text-btn-danger btn btn-danger mb-3">Vider mon panier</a>
+
             </div>
         {% else %}
             <p>Ooops! On dirait que votre panier est vide</p>

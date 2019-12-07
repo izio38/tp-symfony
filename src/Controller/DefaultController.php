@@ -5,6 +5,7 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use App\Service\BoutiqueService;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class DefaultController extends AbstractController
 {
@@ -23,5 +24,13 @@ class DefaultController extends AbstractController
     public function contactAction()
     {
         return $this->render('default/contact.html.twig');
+    }
+
+    public function clearSession(SessionInterface $session)
+    {
+        $session->clear();
+        $response = new Response();
+        $response->setStatusCode(200);
+        return $response;
     }
 }

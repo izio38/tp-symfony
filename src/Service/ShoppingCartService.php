@@ -87,9 +87,9 @@ class ShoppingCartService
 
     public function removeProduct(int $productId)
     {
-        foreach ($this->cart as &$cartProduct) {
+        foreach ($this->cart as $i => $cartProduct) {
             if ($cartProduct["id"] == $productId) {
-                unset($cartProduct);
+                unset($this->cart[$i]);
             }
         }
         $this->session->set(self::CART_SESSION, $this->cart);

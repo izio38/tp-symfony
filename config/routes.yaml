@@ -20,9 +20,17 @@ shopping-cart:
   path: /{_locale}/shopping-card
   controller: App\Controller\ShoppingCartController::index
 add-to-cart:
-  path: /{_locale}/add-to-cart
+  path: /{_locale}/add-to-cart/{productId}
   controller: App\Controller\ShoppingCartController::addToCart
-  methods: POST
+remove-from-cart:
+  path: /{_locale}/remove-from-cart/{productId}
+  controller: App\Controller\ShoppingCartController::removeFromCart
+reset-cart-item:
+  path: /{_locale}/reset-cart-item/{productId}
+  controller: App\Controller\ShoppingCartController::resetCartItem
 reset-cart:
   path: /{_locale}/reset-cart
   controller: App\Controller\ShoppingCartController::resetCart
+clear-session:
+  path: /{_locale}/clear-session
+  controller: App\Controller\DefaultController::clearSession

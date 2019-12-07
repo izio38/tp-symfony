@@ -58,7 +58,7 @@
         const addProductToCard = (productId, quantity) => {
             $.ajax({
                 method: "POST",
-                url: "{{ path('add-to-cart') }}",
+                url: "{{ path('add-to-cart', {productId: -1}) }}",
                 data: {productId, quantity},
                 success: console.log
             });
