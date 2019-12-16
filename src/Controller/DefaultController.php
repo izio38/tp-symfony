@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Service\ShopService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use App\Service\BoutiqueService;
@@ -10,12 +11,12 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 class DefaultController extends AbstractController
 {
     /**
-     * @param BoutiqueService $boutique
+     * @param ShopService $shop
      * @return Response
      */
-    public function index(BoutiqueService $boutique)
+    public function index(ShopService $shop)
     {
-        $categories = $boutique->findAllCategories();
+        $categories = $shop->getAllCategories();
         return $this->render('default/index.html.twig', [
             'categories' => $categories
         ]);

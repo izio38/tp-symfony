@@ -2,7 +2,6 @@
 namespace App\Service;
 
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
-use App\Service\BoutiqueService;
 
 class ShoppingCartService
 {
@@ -43,7 +42,7 @@ class ShoppingCartService
         $totalPrice = 0;
         foreach ($this->cart as $cartProduct) {
             $product = $this->shop->findProduitById($cartProduct["id"]);
-            $totalPrice += $product["prix"];
+            $totalPrice += $product["prix"] * $cartProduct["quantity"];
         }
         return $totalPrice;
     }

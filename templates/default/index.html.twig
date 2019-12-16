@@ -14,11 +14,11 @@
                 <div class="col-lg-4">
                     <div class="card" style="width: 18rem;">
                         <img class="card-img-top" src="{{ asset('images/product-placeholder.jpeg') }}"
-                             alt="{{ cat.libelle }}">
+                             alt="{{ cat.getLabel() }}">
                         <div class="card-body">
-                            <h5 class="card-title">{{ cat.libelle }}</h5>
-                            <p class="card-text">{{ cat.texte }}</p>
-                            <a href="{{ path("products") ~ "/" ~ cat.id }}" class="btn btn-primary">{{ "default.categorie.browseThe" | trans }} {{ cat.libelle }}</a>
+                            <h5 class="card-title">{{ cat.getLabel()}}</h5>
+                            <p class="card-text">{{ cat.getDescription() }}</p>
+                            <a href="{{ path("products") ~ "/" ~ cat.getId() }}" class="btn btn-primary">{{ "default.categorie.browseThe" | trans }} {{ cat.getLabel() }}</a>
                         </div>
                     </div>
                 </div>

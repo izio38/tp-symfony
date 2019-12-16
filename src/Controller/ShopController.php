@@ -3,16 +3,17 @@
 namespace App\Controller;
 
 use App\Service\BoutiqueService;
+use App\Service\ShopService;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 
 class ShopController extends AbstractController
 {
-    public function index($categoryId, BoutiqueService $shopService)
+    public function index($categoryId, ShopService $shop)
     {
-        $productsFromCategorie = $shopService->findProduitsByCategorie(
-            $categoryId
+        $productsFromCategorie = $shop->findProductsByCategoryId(
+            intval($categoryId)
         );
         return $this->render('shop/index.html.twig', [
             'products' => $productsFromCategorie

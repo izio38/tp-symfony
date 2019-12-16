@@ -14,20 +14,20 @@
                 <div class="col-lg-4">
                     <div class="card" style="width: 18rem;">
                         <img class="card-img-top" src="{{ asset('images/product-placeholder.jpeg') }}"
-                             alt="{{ product.libelle }}">
+                             alt="{{ product.getLabel() }}">
                         <div class="card-body">
-                            <h5 class="card-title">{{ product.libelle }} - {{ product.prix }}</h5>
-                            <p class="card-text">{{ product.texte }}</p>
+                            <h5 class="card-title">{{ product.getLabel() }} - {{ product.getPrice() }}</h5>
+                            <p class="card-text">{{ product.getDescription() }}</p>
 
                             <div class="wan-spinner select-quantity">
                               <a href="javascript:void(0)" class="minus">-</a>
-                              <input id="product-{{ product.id }}-quantity" type="text" value="1">
+                              <input id="product-{{ product.getId() }}-quantity" type="text" value="1">
                               <a href="javascript:void(0)" class="plus">+</a>
                             </div>
 
                         </div>
                         <div class="card-footer">
-                            <button productId="{{ product.id }}" class="add-product-button btn btn-primary">{{ "shop.addToCart" | trans }}</button>
+                            <button productId="{{ product.getId() }}" class="add-product-button btn btn-primary">{{ "shop.addToCart" | trans }}</button>
                         </div>
                     </div>
                 </div>
