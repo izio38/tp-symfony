@@ -22,13 +22,13 @@
                 <tbody>
                 {% for product in cart %}
                     <tr>
-                        <th scope="row"><img style="width: 225px; height: 225px;" src="{{ asset('images/product-placeholder.jpeg') }}"/></th>
-                        <td>{{ product.libelle }}</td>
-                        <td>{{ product.quantity }}</td>
+                        <th scope="row"><img style="width: 286px; height: auto; max-height: 377px" src="{{ product.getImageUri() }}"/></th>
+                        <td>{{ product.getLabel() }}</td>
+                        <td>{{ product.getQuantity() }}</td>
                         <td>
-                            <a href="{{ path('remove-from-cart', {productId: product.id}) }}" class="btn btn-danger"><i class="material-icons align-middle">remove</i></a>
-                            <a href="{{ path('add-to-cart', {productId: product.id}) }}" class="btn btn-success"><i class="material-icons align-middle">add</i></a>
-                            <a href="{{ path('reset-cart-item', {productId: product.id}) }}" class="btn btn-danger"><i class="material-icons align-middle">delete</i></a>
+                            <a href="{{ path('remove-from-cart', {productId: product.getId()}) }}" class="btn btn-danger"><i class="material-icons align-middle">remove</i></a>
+                            <a href="{{ path('add-to-cart', {productId: product.getId()}) }}" class="btn btn-success"><i class="material-icons align-middle">add</i></a>
+                            <a href="{{ path('reset-cart-item', {productId: product.getId()}) }}" class="btn btn-danger"><i class="material-icons align-middle">delete</i></a>
                         </td>
                     </tr>
                 {% endfor %}

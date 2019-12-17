@@ -13,11 +13,11 @@
             {% for product in products %}
                 <div class="col-lg-4 mb-4">
                     <div class="card " style="width: 18rem;">
-                        <img class="card-img-top" src="{{ asset('images/product-placeholder.jpeg') }}"
-                             alt="{{ product.libelle }}">
+                        <img class="card-img-top" src="{{ product.getImageUri() }}"
+                             alt="{{ product.getLabel() }}">
                         <div class="card-body">
-                            <h5 class="card-title">{{ product.libelle }} - {{ product.prix }}</h5>
-                            <p class="card-text">{{ product.texte }}</p>
+                            <h5 class="card-title">{{ product.getLabel() }} - {{ product.getPrice() }}</h5>
+                            <p class="card-text">{{ product.getDescription() }}</p>
                             <a href="#" class="btn btn-primary">{{ "shop.buyNow" | trans }}</a>
                         </div>
                     </div>

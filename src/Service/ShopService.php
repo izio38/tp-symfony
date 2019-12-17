@@ -19,7 +19,7 @@ class ShopService
     }
 
     public function findProductById(int $id) {
-        return $this->productRepository->findOneBy([$id]);
+        return $this->productRepository->findOneBy(["id" => $id]);
     }
 
     public function findProductsByCategoryId(int $id) {
@@ -30,5 +30,9 @@ class ShopService
 
     public function getAllCategories() {
         return $this->categoryRepository->findAll();
+    }
+
+    public function findByLikeOrDescriptionLabel(string $searchLabel) {
+        return $this->productRepository->findByLikeOrDescriptionLabel($searchLabel);
     }
 }

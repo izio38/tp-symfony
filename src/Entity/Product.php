@@ -36,6 +36,8 @@ class Product
      */
     private $category;
 
+    private $quantity;
+
     /**
      * @ORM\Column(type="float")
      */
@@ -102,6 +104,18 @@ class Product
     public function setPrice(float $price): self
     {
         $this->price = $price;
+
+        return $this;
+    }
+
+    public function getQuantity(): ?int
+    {
+        return $this->quantity;
+    }
+
+    public function setQuantity(int $quantity): self
+    {
+        $this->quantity = $quantity;
 
         return $this;
     }

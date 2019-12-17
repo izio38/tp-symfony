@@ -12,9 +12,9 @@ class ShoppingCartService
 
     public function __construct(
         SessionInterface $session,
-        BoutiqueService $shopService
+        ShopService $shop
     ) {
-        $this->shop = $shopService;
+        $this->shop = $shop;
         $this->session = $session;
 
         $this->cart = $session->get(self::CART_SESSION, array());
@@ -32,8 +32,8 @@ class ShoppingCartService
 
     public function addExtendedInformation($cartItem)
     {
-        $product = $this->shop->findProduitById($cartItem["id"]);
-        $product["quantity"] = $cartItem["quantity"];
+        $product = $this->shop->findProductById($cartItem["id"]);
+        $product->setQuantity($cartItem["quantity"]);
         return $product;
     }
 
@@ -41,8 +41,8 @@ class ShoppingCartService
     {
         $totalPrice = 0;
         foreach ($this->cart as $cartProduct) {
-            $product = $this->shop->findProduitById($cartProduct["id"]);
-            $totalPrice += $product["prix"] * $cartProduct["quantity"];
+            $product = $this->shop->findProductById($cartProduct["id"]);
+            $totalPrice += $product["price"] * $cartProduct["quantity"];
         }
         return $totalPrice;
     }

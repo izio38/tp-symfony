@@ -13,7 +13,7 @@
             {% for cat in categories %}
                 <div class="col-lg-4">
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{ asset('images/product-placeholder.jpeg') }}"
+                        <img class="card-img-top" src="{{ cat.getImageUri() }}"
                              alt="{{ cat.getLabel() }}">
                         <div class="card-body">
                             <h5 class="card-title">{{ cat.getLabel()}}</h5>

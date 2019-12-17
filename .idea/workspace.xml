@@ -2,23 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be607f7a-8199-44e3-8e33-d53d4edadf82" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Service/ShopService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/TP1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TP1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/start.sh" beforeDir="false" afterPath="$PROJECT_DIR$/bin/start.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DefaultController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ShopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ShopController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/AdminRepository.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ProductRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ProductRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/ShopService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ShopService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Service/ShoppingCartService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ShoppingCartService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/default/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/shop/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shop/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/shop/search-result.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shop/search-result.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/shopping_card/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shopping_card/index.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,7 +34,7 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="console">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.2">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
       <path value="$PROJECT_DIR$/vendor/composer" />
@@ -244,6 +237,7 @@
       <workItem from="1575654435233" duration="13474000" />
       <workItem from="1575716898260" duration="2314000" />
       <workItem from="1576485183294" duration="8299000" />
+      <workItem from="1576565255509" duration="4830000" />
     </task>
     <servers />
   </component>
@@ -258,7 +252,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
