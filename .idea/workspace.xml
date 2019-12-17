@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be607f7a-8199-44e3-8e33-d53d4edadf82" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ShopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ShopController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ProductRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ProductRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/ShopService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ShopService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/ShoppingCartService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ShoppingCartService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/default/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/shop/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shop/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/shop/search-result.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shop/search-result.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/shopping_card/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shopping_card/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -237,7 +228,7 @@
       <workItem from="1575654435233" duration="13474000" />
       <workItem from="1575716898260" duration="2314000" />
       <workItem from="1576485183294" duration="8299000" />
-      <workItem from="1576565255509" duration="4830000" />
+      <workItem from="1576565255509" duration="4903000" />
     </task>
     <servers />
   </component>

@@ -3,6 +3,7 @@
 /.env.local
 /.env.local.php
 /.env.*.local
+/.env.save
 /public/bundles/
 /var/
 /vendor/
