@@ -1,6 +1,14 @@
 <?php
+
 namespace App\Service;
 
+use App\Entity\Command;
+use App\Entity\CommandLine;
+use App\Repository\CommandLineRepository;
+use App\Repository\CommandRepository;
+use App\Repository\ProductRepository;
+use App\Repository\UserRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class ShoppingCartService
@@ -10,14 +18,35 @@ class ShoppingCartService
     private $shop;
     private $cart;
 
+    private $commandRepository;
+    private $commandLineRepository;
+    private $userRepository;
+    private $productRepository;
+
+    private $em;
+
+
     public function __construct(
         SessionInterface $session,
-        ShopService $shop
-    ) {
+        ShopService $shop,
+        CommandRepository $commandRepository,
+        CommandLineRepository $commandLineRepository,
+        UserRepository $userRepository,
+        ProductRepository $productRepository,
+        EntityManagerInterface $em
+    )
+    {
         $this->shop = $shop;
         $this->session = $session;
 
         $this->cart = $session->get(self::CART_SESSION, array());
+
+        $this->commandRepository = $commandRepository;
+        $this->commandLineRepository = $commandLineRepository;
+        $this->userRepository = $userRepository;
+        $this->productRepository = $productRepository;
+
+        $this->em = $em;
     }
 
     public function getContent()
@@ -98,5 +127,38 @@ class ShoppingCartService
     {
         $this->cart = array();
         $this->session->set(self::CART_SESSION, $this->cart);
+    }
+
+    public function transformCartIntoAUserCommand(int $userId): Command
+    {
+        $command = new Command();
+
+        foreach ($this->cart as $cartItem) {
+            $commandLine = new CommandLine();
+
+            $product = $this->productRepository->find($cartItem["id"]);
+
+            $commandLine->setQuantity($cartItem["quantity"]);
+            $commandLine->setPrice($product->getPrice());
+            $commandLine->setCommand($command);
+            $commandLine->setProduct($product);
+
+            $command->addCommandLine($commandLine);
+        }
+
+        $command->setStatus("to-proceed");
+
+        $user = $this->userRepository->find($userId);
+        $command->setUser($user);
+
+        $command->setCreatedAt(new \DateTime());
+
+        $this->em->persist($command);
+
+        $this->em->flush($command);
+
+        self::reset();
+
+        return $command;
     }
 }

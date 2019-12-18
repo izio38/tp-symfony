@@ -77,6 +77,14 @@
         <source>shop.addToCart</source>
         <target>Add to cart</target>
       </trans-unit>
+       <trans-unit id="2uJ9Ty_" resname="default.nav.sign-in">
+          <source>default.nav.sign-in</source>
+          <target>Sign In</target>
+        </trans-unit>
+        <trans-unit id="gN.sKwz" resname="default.nav.register">
+          <source>default.nav.register</source>
+          <target>Register</target>
+        </trans-unit>
     </body>
   </file>
 </xliff>

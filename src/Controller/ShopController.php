@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Service\BoutiqueService;
 use App\Service\ShopService;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

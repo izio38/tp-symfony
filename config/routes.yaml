@@ -34,3 +34,12 @@ reset-cart:
 clear-session:
   path: /{_locale}/clear-session
   controller: App\Controller\DefaultController::clearSession
+user-index:
+  path: /{_locale}/user-index
+  controller: App\Controller\UserController::index
+user-new:
+  path: /{_locale}/user-new
+  controller: App\Controller\UserController::new
+process-cart:
+  path: /{_locale}/process-cart
+  controller: App\Controller\ShoppingCartController::processCartAction

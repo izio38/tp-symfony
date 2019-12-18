@@ -7,6 +7,7 @@ use App\Service\ShoppingCartService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class ShoppingCartController extends AbstractController
 {
@@ -17,6 +18,22 @@ class ShoppingCartController extends AbstractController
 
         return $this->render('shopping_card/index.html.twig', [
             "cart" => $reversedCartContent
+        ]);
+    }
+
+    public function processCartAction($_locale, ShoppingCartService $cartService, SessionInterface $session)
+    {
+        $res = new Response();
+
+        $userId = $session->get("user");
+        if (!$userId) {
+            return $res->setStatusCode(401);
+        }
+
+        $command = $cartService->transformCartIntoAUserCommand($userId);
+
+        return $this->render("shopping_card/process_command.html.twig", [
+            "command" => $command
         ]);
     }
 

@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}iBook - Mon panier{% endblock %}
+
+{% block body %}
+    <div class="bg-tertiary">
+        <div class="container section-header no-breadcrumb">
+            <h1 class="text-center mb-0">Ma Commande</h1>
+        </div>
+    </div>
+    <div class="container mt-4">
+        <p>Description :</p>
+        <ul>
+            <li>
+                Total : {{ command.getTotalPrice() }} euro(s).
+            </li>
+            <li>
+                Numéro de commande : {{ command.getId() }}.
+            </li>
+            <li>
+                Date : {{ command.getCreatedAt() | date("d/m/Y", "Europe/Paris") }}.
+            </li>
+        </ul>
+    </div>
+{% endblock %}
