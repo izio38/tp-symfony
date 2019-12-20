@@ -5,26 +5,14 @@
 {% block body %}
     <div class="bg-tertiary">
         <div class="container section-header no-breadcrumb">
-            <h1 class="text-center mb-0">{{ "default.nav.sign-in" | trans }}</h1>
+            <h1 class="text-center mb-0">{{ "default.nav.profile" | trans }}</h1>
         </div>
     </div>
     <div class="container mt-4">
         {% if user is not null %}
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>FirstName</th>
-                    <th>LastName</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>{{ user.firstName }}</td>
-                    <td>{{ user.lastName }}</td>
-                </tr>
-                </tbody>
-            </table>
-
+            <p>Bonjour {{ user.firstName }} {{ user.lastName }}</p>
+            <a href="{{ path('app_logout') }}">Me déconnecter</a>
+            <a href="{{ path('shopping-cart') }}">Aller à mon panier</a>
         {% else %}
             <p>Vous n'êtes pas connecté</p>
         {% endif %}

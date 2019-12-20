@@ -43,3 +43,36 @@ user-new:
 process-cart:
   path: /{_locale}/process-cart
   controller: App\Controller\ShoppingCartController::processCartAction
+admin:
+  path: /{_locale}/admin
+  controller: App\Controller\AdminController:index
+category:
+  path: /{_locale}/admin/category
+  controller: App\Controller\CategoryController:index
+category-edit:
+  path: /{_locale}/admin/category-edit/{id}
+  controller: App\Controller\CategoryController:edit
+category-new:
+  path: /{_locale}/admin/category-new
+  controller: App\Controller\CategoryController:new
+category-show:
+  path: /{_locale}/admin/category-show/{id}
+  controller: App\Controller\CategoryController:show
+category-delete:
+  path: /{_locale}/admin/category-delete/{id}
+  controller: App\Controller\CategoryController:delete
+product:
+  path: /{_locale}/admin/product
+  controller: App\Controller\ProductController:index
+product-edit:
+  path: /{_locale}/admin/product-edit/{id}
+  controller: App\Controller\ProductController:edit
+product-new:
+  path: /{_locale}/admin/product-new
+  controller: App\Controller\ProductController:new
+product-show:
+  path: /{_locale}/admin/product-show/{id}
+  controller: App\Controller\ProductController:show
+product-delete:
+  path: /{_locale}/admin/product-delete/{id}
+  controller: App\Controller\ProductController:delete

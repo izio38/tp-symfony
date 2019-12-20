@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 /**
  * @Route("/user")
@@ -18,30 +19,32 @@ class UserController extends AbstractController
 {
     public function index(UserRepository $userRepository, SessionInterface $session): Response
     {
-        $userId = $session->get("user");
-        $user = null;
 
-        if ($userId) {
-            $user = $userRepository->find($userId);
+        if (!$this->get('security.authorization_checker')->isGranted('ROLE_USER')) {
+            $this->redirectToRoute("user-new");
         }
+
+        $user=$this->getUser();
 
         return $this->render('user/index.html.twig', [
             'user' => $user
         ]);
     }
 
-    public function new(Request $request, SessionInterface $session): Response
+    public function new(Request $request, SessionInterface $session, UserPasswordEncoderInterface $passwordEncoder): Response
     {
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $user->setPassword($passwordEncoder->encodePassword($user, $user->getPassword()));
+
+            $user->setRoles(["ROLE_USER"]);
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
-
-            $session->set("user", $user->getId());
 
             return $this->redirectToRoute('user-index');
         }

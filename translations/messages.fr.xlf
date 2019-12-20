@@ -85,6 +85,10 @@
         <source>default.nav.register</source>
         <target>M'inscrire</target>
       </trans-unit>
+      <trans-unit id="wW1yv7g" resname="default.nav.profile">
+        <source>default.nav.profile</source>
+        <target>Profile</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

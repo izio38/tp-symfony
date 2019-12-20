@@ -25,12 +25,8 @@ class ShoppingCartController extends AbstractController
     {
         $res = new Response();
 
-        $userId = $session->get("user");
-        if (!$userId) {
-            return $res->setStatusCode(401);
-        }
-
-        $command = $cartService->transformCartIntoAUserCommand($userId);
+        $user = $this->getUser();
+        $command = $cartService->transformCartIntoAUserCommand($user->getId());
 
         return $this->render("shopping_card/process_command.html.twig", [
             "command" => $command

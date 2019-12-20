@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}iBooks - Back-Office - Accueil{% endblock %}
+
+{% block body %}
+    <div class="bg-tertiary">
+        <div class="container section-header no-breadcrumb">
+            <h1 class="text-center mb-0">Gestion des livres</h1>
+        </div>
+    </div>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Catégories</h5>
+                    <p class="card-text">Vous pouvez ajouter, modifier ou supprimer une catégorie.</p>
+                    <a href="{{ path("category") }}" class="btn btn-primary">CATEGORIES</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Produits</h5>
+                    <p class="card-text">Vous pouvez ajouter, modifier ou supprimer un produit.</p>
+                    <a href="{{ path("product") }}" class="btn btn-primary">PRODUITS</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

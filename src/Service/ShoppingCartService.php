@@ -155,7 +155,7 @@ class ShoppingCartService
 
         $this->em->persist($command);
 
-        $this->em->flush($command);
+        $this->em->flush();
 
         self::reset();
 
