@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be607f7a-8199-44e3-8e33-d53d4edadf82" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Service/CurrencyService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ShoppingCartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ShoppingCartController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/ShoppingCartService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ShoppingCartService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/_partials/_navbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/_partials/_navbar.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/translations/messages.en.xlf" beforeDir="false" afterPath="$PROJECT_DIR$/translations/messages.en.xlf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/translations/messages.fr.xlf" beforeDir="false" afterPath="$PROJECT_DIR$/translations/messages.fr.xlf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -176,7 +171,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHP Script.make translations fr">
+  <component name="RunManager" selected="npm.Encore">
     <configuration name="tp-symfony" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <CommandLine parameters="server:run" />
       <TestRunner directory="$PROJECT_DIR$" />
@@ -239,7 +234,8 @@
       <workItem from="1576485183294" duration="8299000" />
       <workItem from="1576565255509" duration="5683000" />
       <workItem from="1576656241300" duration="7558000" />
-      <workItem from="1576843633506" duration="7020000" />
+      <workItem from="1576843633506" duration="7049000" />
+      <workItem from="1578905375033" duration="5311000" />
     </task>
     <servers />
   </component>

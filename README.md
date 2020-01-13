@@ -13,3 +13,7 @@
 * `npm i` - installe les dépendances npm (webpack encore).
 * `npm run watch` - lance la compilation SCSS avec webpack (avec hotreload).
 * `symfony serve` - lance l'instance HTTP.
+
+### TODO Bonus
+* top vente sur toutes les pages sur la droite
+* passer une comande -> envoi un mail à l'acheteur
