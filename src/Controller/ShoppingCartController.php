@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Repository\CommandRepository;
+use App\Repository\UserRepository;
 use App\Service\BoutiqueService;
 use App\Service\CurrencyService;
 use App\Service\ShoppingCartService;
@@ -18,19 +20,28 @@ class ShoppingCartController extends AbstractController
         $reversedCartContent = array_reverse($cartContent);
 
         return $this->render('shopping_card/index.html.twig', [
-            "cart" => $reversedCartContent
+            "cart" => $reversedCartContent,
+            "currency" => $currencyService->getStringCurrency(),
+            "total" => $shoppingCartService->getTotalPrice()
         ]);
     }
 
-    public function processCartAction($_locale, ShoppingCartService $cartService, SessionInterface $session)
+    public function processCartAction($_locale, ShoppingCartService $cartService, SessionInterface $session, CurrencyService $currencyService, CommandRepository $commandRepository)
     {
-        $res = new Response();
-
+        $commands = $commandRepository->findBy(["user" => $this->getUser()]);
         $user = $this->getUser();
         $command = $cartService->transformCartIntoAUserCommand($user->getId());
 
+        if (count($command->getCommandLines()) == 0) {
+            return $this->redirectToRoute("shopping-cart");
+        }
+
+        $cartService->notifyCommandSucceedEmail($command);
+
         return $this->render("shopping_card/process_command.html.twig", [
-            "command" => $command
+            "command" => $command,
+            "currency" => $currencyService->getStringCurrency(),
+            "history" => $commands
         ]);
     }
 

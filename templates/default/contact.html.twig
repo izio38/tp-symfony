@@ -14,15 +14,18 @@
         <h1 class="text-center mb-0">{{ "default.contact.formTitle" | trans }}</h1>
     </div>
 </div>
+
 <div class="container mt-4">
     <div class="row">
         <div class="col-lg-6 offset-lg-3">
+            {{ form_start(form) }}
+            {{ form_errors(form) }}
             <div class="form-group">
                 <label>
                     {{ "default.contact.firstName" | trans }}
                 </label>
                 <span class="required">*</span>
-                <input placeholder="Jean" type="text"/>
+                {{ form_widget(form.firstName) }}
             </div>
 
             <div class="form-group">
@@ -30,7 +33,7 @@
                     {{ "default.contact.lastName" | trans }}
                 </label>
                 <span class="required">*</span>
-                <input placeholder="Dupont" type="text"/>
+                {{ form_widget(form.lastName) }}
             </div>
 
             <div class="form-group">
@@ -38,7 +41,7 @@
                     {{ "default.contact.phone" | trans }}
                 </label>
                 <span class="required">*</span>
-                <input placeholder="0651727985" type="tel"/>
+                {{ form_widget(form.phoneNumber) }}
             </div>
 
             <div class="form-group">
@@ -46,11 +49,12 @@
                     {{ "default.contact.message" | trans }}
                 </label>
                 <span class="required">*</span>
-                <textarea placeholder="{{ "default.contact.messagePlaceholder" | trans }}"></textarea>
+                {{ form_widget(form.messageContent) }}
             </div>
             <div class="form-group">
-                <button type="button" class="btn btn-primary">{{ "default.contact.send" | trans }}</button>
+                {{ form_widget(form.save) }}
             </div>
+            {{ form_end(form) }}
         </div>
     </div>
 </div>

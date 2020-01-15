@@ -4,6 +4,7 @@ namespace App\Service;
 
 use App\Entity\Command;
 use App\Entity\CommandLine;
+use App\Entity\User;
 use App\Repository\CommandLineRepository;
 use App\Repository\CommandRepository;
 use App\Repository\ProductRepository;
@@ -18,6 +19,9 @@ class ShoppingCartService
     private $shop;
     private $cart;
 
+    private $mailer;
+    private $templating;
+
     private $commandRepository;
     private $commandLineRepository;
     private $userRepository;
@@ -27,6 +31,8 @@ class ShoppingCartService
 
 
     public function __construct(
+        \Swift_Mailer $mailer,
+        \Twig_Environment $templating,
         SessionInterface $session,
         ShopService $shop,
         CommandRepository $commandRepository,
@@ -38,6 +44,9 @@ class ShoppingCartService
     {
         $this->shop = $shop;
         $this->session = $session;
+
+        $this->mailer = $mailer;
+        $this->templating = $templating;
 
         $this->cart = $session->get(self::CART_SESSION, array());
 
@@ -74,7 +83,7 @@ class ShoppingCartService
         $totalPrice = 0;
         foreach ($this->cart as $cartProduct) {
             $product = $this->shop->findProductById($cartProduct["id"]);
-            $totalPrice += $product["price"] * $cartProduct["quantity"];
+            $totalPrice += $product->getPrice() * $cartProduct["quantity"];
         }
         return $totalPrice;
     }
@@ -155,6 +164,10 @@ class ShoppingCartService
             $command->addCommandLine($commandLine);
         }
 
+        if (count($command->getCommandLines()) == 0) {
+            return $command;
+        }
+
         $command->setStatus("to-proceed");
 
         $user = $this->userRepository->find($userId);
@@ -169,5 +182,18 @@ class ShoppingCartService
         self::reset();
 
         return $command;
+    }
+
+    public function notifyCommandSucceedEmail(Command $command) {
+        $message = (new \Swift_Message('iBook - Commande effectuée avec succès'))
+            ->setFrom(['romainbillot3009@gmail.com' => 'Romain de iBook'])
+            ->setTo($command->getUser()->getEmail())
+            ->setBody(
+                $this->templating->render(
+                    'emails/command-succeed.html.twig'
+                ),
+                'text/html'
+            );
+        $this->mailer->send($message);
     }
 }

@@ -16,6 +16,6 @@
 
 ### TODO Bonus
 * top vente sur toutes les pages sur la droite : requête DQL avec agrégat, dans un repo (ligne commande ?), controlleur imbriqué (comme pour le panier dans la home page) et on l'ajoute au layout.
-* une variable de session avec la monaie courrante, menu déroulant pour changer de monnaie, créer un pipe twig currency_convert
+* ~~une variable de session avec la monaie courrante, menu déroulant pour changer de monnaie, créer un pipe twig currency_convert~~
 * passer une comande -> envoi un mail à l'acheteur
 * Captcha : symfony-captcha-bundle pour l'inscription.

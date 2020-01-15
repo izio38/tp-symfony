@@ -2,8 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\Contact;
+use App\Form\ContactType;
 use App\Service\ShopService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use App\Service\BoutiqueService;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
@@ -22,9 +25,21 @@ class DefaultController extends AbstractController
         ]);
     }
 
-    public function contactAction()
+    public function contactAction(Request $request)
     {
-        return $this->render('default/contact.html.twig');
+        $contact = new Contact();
+        $form = $this->createForm(ContactType::class, $contact);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+        }
+
+        return $this->render('default/contact.html.twig', ["form" => $form->createView()]);
+    }
+
+    public function sendContact() {
+
     }
 
     public function clearSession(SessionInterface $session)

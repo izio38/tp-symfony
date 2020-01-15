@@ -12,7 +12,7 @@
         <p>Description :</p>
         <ul>
             <li>
-                Total : {{ command.getTotalPrice() }} euro(s).
+                Total : {{ command.getTotalPrice() | currency_convert | format_currency(currency) }}.
             </li>
             <li>
                 Numéro de commande : {{ command.getId() }}.
@@ -21,5 +21,16 @@
                 Date : {{ command.getCreatedAt() | date("d/m/Y", "Europe/Paris") }}.
             </li>
         </ul>
+    </div>
+
+    <div class="container mt-4">
+    {% for lastCommand in history %}
+        <h3>Commande numéro {{ lastCommand.id }}, passée le {{ lastCommand.getCreatedAt() | date("d/m/Y", "Europe/Paris") }}, total : {{ lastCommand.getTotalPrice() | currency_convert | format_currency(currency) }}</h3>
+        <ul>
+            {% for commandLine in lastCommand.getCommandLines() %}
+                <li>{{ commandLine.product.getLabel() }} x {{ commandLine.getQuantity() }} - {{ (commandLine.getPrice() * commandLine.getQuantity() )| currency_convert | format_currency(currency) }}</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
     </div>
 {% endblock %}

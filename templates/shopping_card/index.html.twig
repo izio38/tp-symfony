@@ -16,6 +16,7 @@
                     <th scope="col">Produit</th>
                     <th scope="col">Nom</th>
                     <th scope="col">Quantité</th>
+                    <th scope="col">Total</th>
                     <th scope="col">Actions</th>
                 </tr>
                 </thead>
@@ -25,6 +26,7 @@
                         <th scope="row"><img style="width: 286px; height: auto; max-height: 377px" src="{{ product.getImageUri() }}"/></th>
                         <td>{{ product.getLabel() }}</td>
                         <td>{{ product.getQuantity() }}</td>
+                        <td>{{ (product.getPrice() * product.getQuantity()) | currency_convert | format_currency(currency) }}</td>
                         <td>
                             <a href="{{ path('remove-from-cart', {productId: product.getId()}) }}" class="btn btn-danger"><i class="material-icons align-middle">remove</i></a>
                             <a href="{{ path('add-to-cart', {productId: product.getId()}) }}" class="btn btn-success"><i class="material-icons align-middle">add</i></a>
@@ -36,7 +38,7 @@
                 </tbody>
             </table>
             <div class="floating-container">
-                <a href="{{ path('process-cart') }}" style="float: right; position: relative;" class="ml-2 btn btn-primary">Payer</a>
+                <a href="{{ path('process-cart') }}" style="float: right; position: relative;" class="ml-2 btn btn-primary">Payer {{ total | currency_convert | format_currency(currency) }}</a>
                 <a href="{{ path('reset-cart') }}" style="float: right; position: relative;" class="white-text-btn-danger btn btn-danger mb-3">Vider mon panier</a>
 
             </div>
