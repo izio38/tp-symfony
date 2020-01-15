@@ -16,7 +16,7 @@
                         <img class="card-img-top" src="{{ product.getImageUri() }}"
                              alt="{{ product.getLabel() }}">
                         <div class="card-body">
-                            <h5 class="card-title">{{ product.getLabel() }} - {{ product.getPrice() }}</h5>
+                            <h5 class="card-title">{{ product.getLabel() }} - {{ product.getPrice() | currency_convert | format_currency(currency) }}</h5>
                             <p class="card-text">{{ product.getDescription() }}</p>
 
                             <div class="wan-spinner select-quantity">

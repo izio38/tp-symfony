@@ -48,6 +48,19 @@
             </div>
         </form>
 
+        <div style="color: white;" class="my-lg-0 dropdown pl-3">
+            <a role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="languageChoice">
+                <i style="vertical-align: middle" class="material-icons">attach_money</i>
+                <img src="{{ asset('images/down-arrow.svg') }}">
+                <div class="dropdown-menu" aria-labelledby="languageChoice">
+                    <a class="dropdown-item" href="{{ path("currency-change", {'to': 'HRK'}) }}">HRK</a>
+                    <a class="dropdown-item" href="{{ path("currency-change", {'to': 'JPY'}) }}">JPY</a>
+                    <a class="dropdown-item" href="{{ path("currency-change", {'to': 'USD'}) }}">USD</a>
+                    <a class="dropdown-item" href="{{ path("currency-change", {'to': 'EUR'}) }}">EUR</a>
+                </div>
+            </a>
+        </div>
+
         <div style="color: white;" class="pr-4 my-lg-0 dropdown pl-3">
             <a role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="languageChoice">
                 <img src="{{ asset("images/lang-change.svg") }}" />

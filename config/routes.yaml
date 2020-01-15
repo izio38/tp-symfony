@@ -76,3 +76,8 @@ product-show:
 product-delete:
   path: /{_locale}/admin/product-delete/{id}
   controller: App\Controller\ProductController:delete
+currency-change:
+  path: /{_locale}/currency/change/{to}
+  controller: App\Controller\CurrencyController:change
+  defaults:
+    to: EUR

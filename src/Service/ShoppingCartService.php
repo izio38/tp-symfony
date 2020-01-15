@@ -56,6 +56,9 @@ class ShoppingCartService
 
     public function getExtendedContent()
     {
+        if (!is_array($this->cart)) {
+            return [];
+        }
         return array_map(array($this, 'addExtendedInformation'), $this->cart);
     }
 
@@ -78,11 +81,17 @@ class ShoppingCartService
 
     public function getProductNumber()
     {
+        if (!is_array($this->cart)) {
+            return 0;
+        }
         return count($this->cart);
     }
 
     public function addProduct(int $productId, int $quantity = 1)
     {
+        if (!is_array($this->cart)) {
+            $this->cart = [];
+        }
         foreach ($this->cart as &$product) {
             if ($product["id"] == $productId) {
                 $product["quantity"] += $quantity;

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Service\BoutiqueService;
+use App\Service\CurrencyService;
 use App\Service\ShoppingCartService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -11,7 +12,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class ShoppingCartController extends AbstractController
 {
-    public function index(ShoppingCartService $shoppingCartService)
+    public function index(ShoppingCartService $shoppingCartService, CurrencyService $currencyService)
     {
         $cartContent = $shoppingCartService->getExtendedContent();
         $reversedCartContent = array_reverse($cartContent);

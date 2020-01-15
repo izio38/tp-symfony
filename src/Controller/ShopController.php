@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Service\CurrencyService;
 use App\Service\ShopService;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -9,13 +10,14 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ShopController extends AbstractController
 {
-    public function index($categoryId, ShopService $shop)
+    public function index($categoryId, ShopService $shop, CurrencyService $currencyService)
     {
         $productsFromCategory = $shop->findProductsByCategoryId(
             intval($categoryId)
         );
         return $this->render('shop/index.html.twig', [
-            'products' => $productsFromCategory
+            'products' => $productsFromCategory,
+            'currency' => $currencyService->getStringCurrency()
         ]);
     }
 

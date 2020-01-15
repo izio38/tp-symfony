@@ -7,6 +7,10 @@ parameters:
     app.supported_locales: 'fr|en'
 
 services:
+    twig.extention.intl:
+        class: Twig\Extra\Intl\IntlExtension
+        tags:
+            - {name: twig.extension}
     # default configuration for services in *this* file
     _defaults:
         autowire: true      # Automatically injects dependencies in your services.
