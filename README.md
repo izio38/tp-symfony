@@ -1,5 +1,9 @@
 # TP Symfony
 
+### PHP INI
+* Il faut activer l'extension `gd2` qui sert pour la génération de captcha.
+* Il faut activer l'extention `mysql_pdo` pour la connexion à la base de données.
+
 ### Installation avec docker:
 * `./bin/start.sh` - lance le container mysql 5.7.
 * `composer install` - installe les dépendances.
