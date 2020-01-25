@@ -2,20 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be607f7a-8199-44e3-8e33-d53d4edadf82" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Entity/Contact.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/ContactType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/emails/command-succeed.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DefaultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/swiftmailer.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/swiftmailer.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ShoppingCartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ShoppingCartController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Service/ShoppingCartService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ShoppingCartService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/default/contact.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default/contact.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/shopping_card/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shopping_card/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/shopping_card/process_command.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shopping_card/process_command.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Twig/AppRuntime.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Twig/AppRuntime.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start-sql.sh" beforeDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,7 +31,7 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.2">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="Symfony">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
       <path value="$PROJECT_DIR$/vendor/composer" />
@@ -159,7 +154,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="/tmp/JeuMVC" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/bin/console" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
@@ -168,18 +163,6 @@
       <recent name="H:\workspace\fork\tp-symfony\public\vendors" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager" selected="PHP Script.Dumper">
     <configuration name="tp-symfony" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <CommandLine parameters="server:run" />
@@ -187,12 +170,22 @@
       <method v="2" />
     </configuration>
     <configuration name="Dumper" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/bin/console" scriptParameters="server:dump">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
       <method v="2" />
     </configuration>
     <configuration name="make translations fr" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/bin/console" scriptParameters="translation:update --force fr">
       <method v="2" />
     </configuration>
     <configuration name="serve" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/bin/console" scriptParameters="server:run">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
       <method v="2" />
     </configuration>
     <configuration name="Encore" type="js.build_tools.npm">
@@ -217,6 +210,18 @@
         <item itemvalue="PHPUnit.tp-symfony" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -273,18 +278,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="547" y="174" key="#CLI_Interpreters/0.0.1920.1040@0.0.1920.1040" timestamp="1575655194970" />
-    <state x="679" y="75" key="#PHP" timestamp="1575655379976">
+    <state x="679" y="75" width="588" height="889" key="#PHP" timestamp="1579962109845">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="679" y="75" key="#PHP/0.0.1920.1040@0.0.1920.1040" timestamp="1575655379976" />
+    <state x="679" y="75" width="588" height="889" key="#PHP/0.0.1920.1040@0.0.1920.1040" timestamp="1579962109845" />
     <state x="552" y="178" key="#SCSS" timestamp="1575662219061">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#SCSS/0.0.1920.1040@0.0.1920.1040" timestamp="1575662219061" />
-    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1575719072918">
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579962371985">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1575719072918" />
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579962371985" />
     <state x="740" y="224" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1575658603258">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -293,30 +298,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="632" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1575656216810" />
+    <state x="674" y="212" key="#serve" timestamp="1579961796068">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="674" y="212" key="#serve/0.0.1920.1040@0.0.1920.1040" timestamp="1579961796068" />
     <state x="639" y="159" width="690" height="719" key="#tp-symfony" timestamp="1575655001267">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="639" y="159" width="690" height="719" key="#tp-symfony/0.0.1920.1040@0.0.1920.1040" timestamp="1575655001267" />
-    <state x="957" y="344" key="FileChooserDialogImpl" timestamp="1575655191086">
+    <state x="184" y="85" key="DiffContextDialog" timestamp="1579961747792">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="957" y="344" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1575655191086" />
-    <state width="1877" height="213" key="GridCell.Tab.0.bottom" timestamp="1575719168194">
+    <state x="184" y="85" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579961747792" />
+    <state x="957" y="344" key="FileChooserDialogImpl" timestamp="1579962097684">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="213" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1575719168194" />
-    <state width="1877" height="213" key="GridCell.Tab.0.center" timestamp="1575719168194">
+    <state x="957" y="344" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1579962097684" />
+    <state width="1877" height="356" key="GridCell.Tab.0.bottom" timestamp="1579963997756">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="213" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1575719168194" />
-    <state width="1877" height="213" key="GridCell.Tab.0.left" timestamp="1575719168194">
+    <state width="1877" height="356" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579963997756" />
+    <state width="1877" height="356" key="GridCell.Tab.0.center" timestamp="1579963997756">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="213" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1575719168194" />
-    <state width="1877" height="213" key="GridCell.Tab.0.right" timestamp="1575719168194">
+    <state width="1877" height="356" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579963997756" />
+    <state width="1877" height="356" key="GridCell.Tab.0.left" timestamp="1579963997756">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="213" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1575719168194" />
+    <state width="1877" height="356" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579963997756" />
+    <state width="1877" height="356" key="GridCell.Tab.0.right" timestamp="1579963997756">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="356" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579963997756" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1575657188539">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -325,6 +338,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="661" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1575654437235" />
+    <state x="646" y="101" width="627" height="837" key="find.popup" timestamp="1579963053890">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="646" y="101" width="627" height="837" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1579963053890" />
+    <state x="696" y="293" key="git4idea.merge.GitPullDialog" timestamp="1579961758767">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="696" y="293" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579961758767" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1575656673449">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -3,8 +3,6 @@
 namespace App\Controller;
 
 use App\Repository\CommandRepository;
-use App\Repository\UserRepository;
-use App\Service\BoutiqueService;
 use App\Service\CurrencyService;
 use App\Service\ShoppingCartService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

@@ -194,6 +194,8 @@ class ShoppingCartService
                 ),
                 'text/html'
             );
+        dump("OKOK");
+        var_dump("OKOK");
         $this->mailer->send($message);
     }
 }

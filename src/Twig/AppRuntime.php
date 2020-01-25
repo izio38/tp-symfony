@@ -15,7 +15,6 @@ class AppRuntime implements RuntimeExtensionInterface
 
     public function currencyConvert($number)
     {
-        dump($this->currencyService->userCurrency);
         return $this->currencyService->getUserCurrency($number);
     }
 }
