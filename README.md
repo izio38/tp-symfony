@@ -29,4 +29,4 @@ J'ai utilisé un compte gmail pour l'envoit des mails n'ayant pas de serveur SMT
 * ~~une variable de session avec la monaie courrante, menu déroulant pour changer de monnaie, créer un pipe twig currency_convert~~
 * ~~back office admin seulement.~~
 * ~~passer une comande -> envoi un mail à l'acheteur.~~
-* Captcha : symfony-captcha-bundle pour l'inscription.
+* ~~Captcha : symfony-captcha-bundle pour l'inscription.~~
